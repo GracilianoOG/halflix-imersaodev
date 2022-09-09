@@ -4,14 +4,29 @@
     padding: 0;
 }
 
-body {
+.wrapper {
     background-image: url("../img/background.jpg");
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    text-align: center;
 }
 
-.capa {
+.jogos__titulo {
+    color: white;
+    padding: 1rem 0;
+}
+
+.jogos__capas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.jogos__capa {
     max-height: 250px;
 }
