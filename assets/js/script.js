@@ -1,8 +1,14 @@
 const jogos = document.querySelector(".jogos__capas");
-const jogosCapas = [
+const campoEntradaCapa = document.querySelector(".jogos__input");
+const botaoAdicionaCapa = document.querySelector(".jogos__botao--adicionar");
+const jogosCapas = [];
 
-];
-
-for(let i = 0; i < jogosCapas.length; i++) {
-    jogos.innerHTML = jogos.innerHTML + `<img class="jogos__capa" src="${jogosCapas[i]}">`;
-}
+botaoAdicionaCapa.addEventListener("click", () => {
+    if(jogosCapas.includes(campoEntradaCapa.value)) {
+        console.log("Elemento repetido!");
+        return;
+    }
+    jogosCapas.push(campoEntradaCapa.value);
+    const ultimoElemento = jogosCapas.length - 1;
+    jogos.innerHTML += `<img class="jogos__capa" src="${jogosCapas[ultimoElemento]}">`;
+});
