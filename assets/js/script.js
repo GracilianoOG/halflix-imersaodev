@@ -12,6 +12,7 @@ botaoAdicionaCapa.addEventListener("click", () => {
     }
     listaDasCapas.push(capa);
     jogosCapas.innerHTML += `<img class="jogos__capa" src="${listaDasCapas[ultimoElemento]}">`;
+    limpaCampo();
 });
 
 botaoDeletaCapa.addEventListener("click", () => {
@@ -20,9 +21,14 @@ botaoDeletaCapa.addEventListener("click", () => {
         const posicao = listaDasCapas.indexOf(capa);
         listaDasCapas.splice(posicao, 1);
         jogosCapas.children[posicao].outerHTML = "";
+        limpaCampo();
     }
 });
 
 function devolveEntradaFormatada() {
     return (campoEntradaCapa.value).trim();
+}
+
+function limpaCampo() {
+    campoEntradaCapa.value = "";
 }
