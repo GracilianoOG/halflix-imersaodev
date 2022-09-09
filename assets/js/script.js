@@ -7,7 +7,7 @@ const listaDasCapas = [];
 botaoAdicionaCapa.addEventListener("click", () => {
     const capa = devolveEntradaFormatada();
     const ultimoElemento = listaDasCapas.length;
-    if(listaDasCapas.includes(capa)) {
+    if(listaDasCapas.includes(capa) || capa == "") {
         return;
     }
     listaDasCapas.push(capa);
