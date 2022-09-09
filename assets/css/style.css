@@ -13,6 +13,51 @@
     text-align: center;
 }
 
+.jogos__configuracao {
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    margin: 0 auto 1.5rem auto;
+    max-width: 500px;
+    width: 90%;
+}
+
+.jogos__input {
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 1rem;
+    width: calc(100% - 100px);
+}
+
+.jogos__botao {
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: background-color 200ms;
+    width: 50px;
+}
+
+.jogos__botao--adicionar {
+    color: green;
+}
+
+.jogos__botao--adicionar:hover {
+    color: white;
+    background-color: green;
+}
+
+.jogos__botao--deletar {
+    color: red;
+}
+
+.jogos__botao--deletar:hover {
+    color: white;
+    background-color: red;
+}
+
 .jogos__capas {
     display: flex;
     flex-wrap: wrap;
