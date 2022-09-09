@@ -5,18 +5,24 @@ const botaoDeletaCapa = document.querySelector(".jogos__botao--deletar");
 const jogosCapas = [];
 
 botaoAdicionaCapa.addEventListener("click", () => {
-    if(jogosCapas.includes(campoEntradaCapa.value)) {
+    const capa = devolveEntradaFormatada();
+    if(jogosCapas.includes(capa)) {
         return;
     }
-    jogosCapas.push(campoEntradaCapa.value);
+    jogosCapas.push(capa);
     const ultimoElemento = jogosCapas.length - 1;
     jogos.innerHTML += `<img class="jogos__capa" src="${jogosCapas[ultimoElemento]}">`;
 });
 
 botaoDeletaCapa.addEventListener("click", () => {
-    if(jogosCapas.includes(campoEntradaCapa.value)) {
-        const posicao = jogosCapas.indexOf(campoEntradaCapa.value);
+    const capa = devolveEntradaFormatada();
+    if(jogosCapas.includes(capa)) {
+        const posicao = jogosCapas.indexOf(capa);
         jogosCapas.splice(posicao, 1);
         jogos.children[posicao].outerHTML = "";
     }
 });
+
+function devolveEntradaFormatada() {
+    return (campoEntradaCapa.value).trim();
+}
