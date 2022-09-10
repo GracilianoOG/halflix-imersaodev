@@ -69,12 +69,38 @@
 }
 
 .jogos__capa {
+    position: relative;
     max-height: 250px;
     transition: transform 400ms;
 }
 
 .jogos__capa:hover {
     transform: scale(1.1);
+}
+
+.capa__imagem {
+    max-height: inherit;
+}
+
+.capa__deletar {
+    background-color: rgba(255, 0, 0, .5);
+    border: none;
+    border-radius: 5px;
+    bottom: 0px;
+    color: white;
+    cursor: pointer;
+    height: 30px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    position: absolute;
+    right: 0px;
+    transition: background-color 400ms;
+    width: 30px;
+}
+
+.capa__deletar:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: red;
 }
 
 .rodape {
