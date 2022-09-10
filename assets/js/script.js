@@ -16,9 +16,7 @@ botaoAdicionaCapa.addEventListener("click", () => {
     capaContainer.innerHTML += `<img class="capa__imagem" src="${listaDasCapas[ultimoElemento]}">`;
     capaContainer.innerHTML += `<button class="capa__deletar" type="button">&times;</button>`;
     capaContainer.querySelector(".capa__deletar").addEventListener("click", (event) => {
-        const posicao = listaDasCapas.indexOf(capa);
-        listaDasCapas.splice(posicao, 1);
-        event.target.parentNode.outerHTML = "";
+        deletaCapa(capa, event.target.parentNode);
         console.log(listaDasCapas);
     });
     jogosCapas.appendChild(capaContainer);
@@ -28,12 +26,16 @@ botaoAdicionaCapa.addEventListener("click", () => {
 botaoDeletaCapa.addEventListener("click", () => {
     const capa = devolveEntradaFormatada();
     if(listaDasCapas.includes(capa)) {
-        const posicao = listaDasCapas.indexOf(capa);
-        listaDasCapas.splice(posicao, 1);
-        jogosCapas.children[posicao].outerHTML = "";
-        limpaCampo();
+        deletaCapa(capa, jogosCapas.children[listaDasCapas.indexOf(capa)]);
     }
 });
+
+function deletaCapa(listaElemento, elemento, limparCampo = true) {
+    const posicao = listaDasCapas.indexOf(listaElemento);
+    listaDasCapas.splice(posicao, 1);
+    elemento.outerHTML = "";
+    if(limparCampo) {limpaCampo();}
+}
 
 function devolveEntradaFormatada() {
     return (campoEntradaCapa.value).trim();
