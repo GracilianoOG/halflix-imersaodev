@@ -11,7 +11,17 @@ botaoAdicionaCapa.addEventListener("click", () => {
         return;
     }
     listaDasCapas.push(capa);
-    jogosCapas.innerHTML += `<img class="jogos__capa" src="${listaDasCapas[ultimoElemento]}">`;
+    const capaContainer = document.createElement("div");
+    capaContainer.classList.add("jogos__capa");
+    capaContainer.innerHTML += `<img class="capa__imagem" src="${listaDasCapas[ultimoElemento]}">`;
+    capaContainer.innerHTML += `<button class="capa__deletar" type="button">&times;</button>`;
+    capaContainer.querySelector(".capa__deletar").addEventListener("click", (event) => {
+        const posicao = listaDasCapas.indexOf(capa);
+        listaDasCapas.splice(posicao, 1);
+        event.target.parentNode.outerHTML = "";
+        console.log(listaDasCapas);
+    });
+    jogosCapas.appendChild(capaContainer);
     limpaCampo();
 });
 
