@@ -47,3 +47,6 @@
 ## 📌 Mais informações
 
 Este pequeno projeto faz parte do 4° e 5° dia da Imersão Dev da Alura.
+
+* 📚 [Fonte Roboto](https://fonts.google.com/specimen/Roboto)
+* 📚 [Gerador de Favicon](https://favicon.io/)
