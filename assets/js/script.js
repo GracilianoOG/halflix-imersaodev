@@ -17,7 +17,6 @@ botaoAdicionaCapa.addEventListener("click", () => {
     capaContainer.innerHTML += `<button class="capa__deletar" type="button">&times;</button>`;
     capaContainer.querySelector(".capa__deletar").addEventListener("click", (event) => {
         deletaCapa(capa, event.target.parentNode);
-        console.log(listaDasCapas);
     });
     jogosCapas.appendChild(capaContainer);
     limpaCampo();
